@@ -28,3 +28,18 @@ opt.updatetime = 250 -- Faster completion
 opt.timeout = true -- Enable timeout for mappings
 opt.timeoutlen = 300 -- Time to wait for mapped sequence to complete
 opt.clipboard = "unnamedplus" -- Use system clipboard
+
+vim.opt.conceallevel = 2 -- Hide markup for bold, italic etc.
+
+-- Markdown specific settings
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "markdown",
+  callback = function()
+    -- Enable word wrap
+    vim.opt_local.wrap = true
+    -- Enable spell checking
+    vim.opt_local.spell = true
+    -- Set text width for auto wrapping
+    vim.opt_local.textwidth = 80
+  end,
+})
