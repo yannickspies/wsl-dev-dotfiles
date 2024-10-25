@@ -14,7 +14,7 @@ return {
     "neovim/nvim-lspconfig",
     opts = {
       servers = {
-        -- Pyright for type checking and intellisense
+        -- Pyright for type checking
         pyright = {
           settings = {
             python = {
@@ -27,6 +27,15 @@ return {
             },
           },
         },
+        -- Ruff for linting
+        ruff_lsp = {
+          init_options = {
+            settings = {
+              -- Any extra CLI arguments for `ruff` go here.
+              args = {},
+            },
+          },
+        },
       },
     },
   },
@@ -36,7 +45,7 @@ return {
     "stevearc/conform.nvim",
     opts = {
       formatters_by_ft = {
-        python = { "black", "isort" },
+        python = { "ruff_format", "ruff_fix" }, -- Use ruff for formatting
       },
     },
   },
