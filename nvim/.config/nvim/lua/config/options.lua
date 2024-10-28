@@ -43,3 +43,8 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.opt_local.textwidth = 80
   end,
 })
+
+-- Set fileformat to unix by default
+opt.fileformat = "unix"
+-- Automatically detect and handle line endings
+opt.fileformats = "unix,dos"
