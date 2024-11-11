@@ -44,6 +44,17 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
+-- Auto-remove CRLF
+vim.api.nvim_create_autocmd({ "BufReadPost" }, {
+  pattern = "*",
+  callback = function()
+    if vim.opt.fileformat:get() == "dos" then
+      vim.cmd([[set fileformat=unix]])
+      vim.cmd([[write]])
+    end
+  end,
+})
+
 -- Set fileformat to unix by default
 opt.fileformat = "unix"
 -- Automatically detect and handle line endings
