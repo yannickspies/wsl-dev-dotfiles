@@ -17,15 +17,14 @@ return {
       settings = {
         -- Enable inlay hints
         tsserver_file_preferences = {
-          includeInlayParameterNameHints = "all",
+          includeInlayParameterNameHints = "none",
           includeInlayParameterNameHintsWhenArgumentMatchesName = false,
-          includeInlayFunctionParameterTypeHints = true,
-          includeInlayVariableTypeHints = true,
-          includeInlayPropertyDeclarationTypeHints = true,
-          includeInlayFunctionLikeReturnTypeHints = true,
-          includeInlayEnumMemberValueHints = true,
-        },
-        -- Auto-import settings
+          includeInlayFunctionParameterTypeHints = false,
+          includeInlayVariableTypeHints = false,
+          includeInlayPropertyDeclarationTypeHints = false,
+          includeInlayFunctionLikeReturnTypeHints = false,
+          includeInlayEnumMemberValueHints = false,
+        }, -- Auto-import settings
         tsserver_format_options = {
           allowIncompleteCompletions = false,
           allowRenameOfImportPath = true,
